@@ -1,0 +1,59 @@
+[project]
+name = "ereignis"
+version = "0.1.0"
+description = "A fast type-safe event forwarder"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "starlette>=0.48.0",
+    "strawberry-graphql>=0.282.0",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",  # for starlette's TestClient
+    "mypy>=1.18.2",
+    "pytest>=8.4.2",
+    "ruff>=0.13.3",
+]
+
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+    "B",    # flake8-bugbear
+    "C4",   # flake8-comprehensions
+    "COM",  # flake8-commas
+    "E",    # pycodestyle
+    "F",    # pyflakes
+    "I",    # isort
+    "RUF10",# ruff
+    "UP",   # pyupgrade
+    "W",    # pycodestyle
+]
+
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+# include-trailing-comma = true
+length-sort = true
+# multi-line-output = 3
+order-by-type = false
+# float-to-top = true
+extra-standard-library = [
+    "typing_extensions",
+]
+
+
+[tool.mypy]
+strict = true
+
+disallow_any_explicit = true
+warn_unreachable = true
+implicit_reexport = false
+
+show_error_codes = true
+
+scripts_are_modules = true

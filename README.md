@@ -1,2 +1,3 @@
 # ereignis
-An event forwarder
+
+A fast type-safe event forwarder.
