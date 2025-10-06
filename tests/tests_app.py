@@ -20,9 +20,14 @@ class AppTests(unittest.IsolatedAsyncioTestCase):
         super().tearDown()
 
     def test_app(self) -> None:
-        response = self.session.post(self.url_for("graphql"), content=r"""
-                query TestQuery($events: [Event]) {
-                    events(events: $events)
-                }
-        """)
+        response = self.session.post(
+            self.url_for("graphql"),
+            json={
+                "query": r"""
+                    query TestQuery($events: [Event]) {
+                        events(events: $events)
+                    }
+                """,
+            },
+        )
         self.assertEqual(200, response.status_code, response.text)
