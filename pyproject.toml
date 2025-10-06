@@ -18,6 +18,16 @@ dev = [
 ]
 
 
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]
+filterwarnings = [
+    "error",
+]
+pythonpath = '.'
+
+
 [tool.ruff]
 line-length = 100
 
