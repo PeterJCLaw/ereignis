@@ -18,6 +18,18 @@ dev = [
 ]
 
 
+[tool.mypy]
+strict = true
+
+disallow_any_explicit = true
+warn_unreachable = true
+implicit_reexport = false
+
+show_error_codes = true
+
+scripts_are_modules = true
+
+
 [tool.pytest.ini_options]
 addopts = [
     "--import-mode=importlib",
@@ -55,15 +67,3 @@ order-by-type = false
 extra-standard-library = [
     "typing_extensions",
 ]
-
-
-[tool.mypy]
-strict = true
-
-disallow_any_explicit = true
-warn_unreachable = true
-implicit_reexport = false
-
-show_error_codes = true
-
-scripts_are_modules = true
