@@ -19,6 +19,10 @@ dev = [
 
 
 [tool.mypy]
+files = [
+    "ereignis",
+    "tests",
+]
 strict = true
 
 disallow_any_explicit = true
